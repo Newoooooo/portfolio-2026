@@ -1,0 +1,122 @@
+/* =========================================
+   ZEN VORTEX - Reverse Implosion
+   Stage 1: Green Void (Chaos)
+   Stage 2: White Suction (Order enters)
+   Stage 3: Singularity (Text reveals)
+   Stage 4: Release (Clean exit)
+   ========================================= */
+
+.zen-loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Base Layer - Deep Green (Chaos) */
+.loading-base-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #064E3B;
+  z-index: 0;
+}
+
+/* Mask Layer - White (Order) sucks inward */
+.loading-mask-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.suck-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Spiral Swirl Container */
+.spiral-swirl-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.spiral-swirl-svg {
+  overflow: visible;
+}
+
+/* Center Text - The Singularity */
+.zen-center-text {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.zen-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #064E3B;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.zen-subtitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-style: italic;
+  font-weight: 600;
+  color: #064E3B;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-top: -0.1em;
+}
+
+/* Divider Line */
+.zen-divider {
+  height: 1px;
+  background: #064E3B;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Attribution Text */
+.zen-attribution-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #064E3B;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .zen-divider {
+    margin: 1rem 0 0.75rem;
+  }
+}

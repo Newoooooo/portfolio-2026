@@ -1,0 +1,153 @@
+.social-proof-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--p3-white) 0%, rgba(15, 118, 110, 0.03) 100%);
+  position: relative;
+}
+
+.social-proof-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: var(--p3-white);
+  border: 1px solid rgba(15, 118, 110, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(15, 118, 110, 0.08);
+}
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
+  color: var(--p3-teal);
+  opacity: 0.15;
+  position: absolute;
+  top: -1rem;
+  left: 1.5rem;
+  line-height: 1;
+}
+
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--p3-dark);
+  line-height: 1.8;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--p3-teal);
+}
+
+.testimonial-author {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--p3-dark);
+  font-size: 1rem;
+}
+
+.author-title {
+  font-family: 'Inter', sans-serif;
+  color: var(--p3-teal);
+  font-size: 0.875rem;
+}
+
+/* Certifications */
+.certifications {
+  text-align: center;
+}
+
+.cert-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--p3-dark);
+  margin-bottom: 2rem;
+}
+
+.cert-badges {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cert-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.cert-badge:hover .cert-image {
+  transform: scale(1.05);
+}
+
+.cert-placeholder {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed rgba(15, 118, 110, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--p3-teal);
+  opacity: 0.5;
+}
+
+.cert-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--p3-dark);
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 2rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1.25rem;
+  }
+
+  .quote-mark {
+    font-size: 5rem;
+  }
+
+  .cert-badges {
+    gap: 2rem;
+  }
+
+  .cert-image,
+  .cert-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+}

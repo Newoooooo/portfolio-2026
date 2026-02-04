@@ -1,0 +1,207 @@
+/* =========================================
+   GALLERY - Strega Sticky-Scroll Carousel
+   Hierarchy: Grandparent (scroll) > Parent (sticky) > Child (motion)
+   ========================================= */
+
+/* GRANDPARENT: Ghost Track - creates physical scroll space */
+.gallery-section {
+  position: relative;
+  height: 300vh; /* Scroll height for locking */
+  background: #94C197; /* Strega sage green */
+  z-index: 10;
+}
+
+/* PARENT: Sticky Frame - locks to viewport while scrolling */
+.gallery-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Fade-in animation when section enters */
+  animation: galleryFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes galleryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CHILD: Motion Track - horizontal flex container */
+.gallery-track {
+  display: flex;
+  gap: 2.5rem;
+  padding-left: 4rem;
+  will-change: transform;
+  /* Smooth scroll transition */
+  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Base gallery item */
+.gallery-item {
+  flex-shrink: 0;
+  width: 300px;
+  height: 400px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Image cards - NO filter */
+.gallery-image-card {
+  background: transparent;
+  position: relative;
+}
+
+.gallery-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image-card:hover img {
+  transform: scale(1.02);
+}
+
+/* Text cards - Strega aesthetic */
+.gallery-text-card {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  width: 380px;
+}
+
+.text-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text-card-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.text-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-card-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 320px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .gallery-item {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .gallery-text-card {
+    width: 420px;
+    padding: 3rem;
+  }
+  
+  .text-card-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-item {
+    width: 400px;
+    height: 500px;
+  }
+  
+  .gallery-text-card {
+    width: 480px;
+  }
+  
+  .text-card-title {
+    font-size: 4rem;
+  }
+  
+  .text-card-description {
+    max-width: 380px;
+  }
+}
+
+/* Mobile-first improvements */
+@media (max-width: 767px) {
+  .gallery-section {
+    height: 250vh;
+  }
+
+  .gallery-track {
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .gallery-item {
+    width: 250px;
+    height: 320px;
+  }
+
+  .gallery-text-card {
+    width: 280px;
+    padding: 1.5rem;
+  }
+
+  .text-card-title {
+    font-size: 2rem;
+  }
+
+  .text-card-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .text-card-description {
+    font-size: 0.8rem;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    height: 200vh;
+  }
+
+  .gallery-item {
+    width: 200px;
+    height: 260px;
+  }
+
+  .gallery-text-card {
+    width: 240px;
+    padding: 1.25rem;
+  }
+
+  .text-card-title {
+    font-size: 1.75rem;
+  }
+}

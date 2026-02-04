@@ -1,0 +1,141 @@
+/* =========================================
+   TOOLKIT - Command Center Layout
+   ========================================= */
+
+.toolkit-section {
+  min-height: 80vh;
+  padding: 10rem 2rem 4rem;
+  background: var(--p3-white);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Title */
+.toolkit-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--p3-dark);
+  text-align: center;
+  margin: 0 0 4rem 0;
+  letter-spacing: 0.05em;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+  max-width: 700px;
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 5;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual Skill Card */
+.skill-card {
+  text-align: center;
+  padding: 1rem;
+  cursor: default;
+  transition: color 0.2s ease;
+}
+
+.skill-card h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--p3-dark);
+  margin: 0 0 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.skill-icon {
+  color: var(--p3-teal);
+  margin-bottom: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.skill-card:hover .skill-icon {
+  color: var(--p3-teal);
+  transform: scale(1.1);
+}
+
+.skill-card p {
+  font-size: 0.75rem;
+  color: var(--p3-grey);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.skill-card:hover h4 {
+  color: var(--p3-teal);
+}
+
+.skill-card:hover p {
+  color: var(--p3-teal);
+  opacity: 0.8;
+}
+
+/* Desk Silhouette - Bottom Anchor */
+.desk-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.desk-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(1000%) hue-rotate(140deg) brightness(95%) contrast(101%);
+  opacity: 0.15;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .toolkit-section {
+    padding: 5rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .toolkit-title {
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .skills-grid {
+    gap: 1.5rem 1rem;
+    padding: 0;
+  }
+
+  .skill-card {
+    padding: 0.75rem;
+  }
+
+  .skill-card h4 {
+    font-size: 0.875rem;
+  }
+
+  .skill-card p {
+    font-size: 0.7rem;
+  }
+
+  .skill-icon {
+    transform: scale(0.85);
+  }
+}

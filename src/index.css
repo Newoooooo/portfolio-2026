@@ -1,0 +1,333 @@
+:root {
+  /* Portfolio 2 Palette - Clean */
+  --p3-white: #FFFFFF;
+  --p3-dark: #111827;
+  --p3-teal: #0F766E;
+  --p3-teal-light: #14B8A6;
+  --p3-grey: #6B7280;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  /* NOTE: overflow-x: hidden removed - it breaks position: sticky */
+}
+
+body {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  color: var(--p3-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   TITLE CARD - Centered Hero
+   ========================================= */
+
+.title-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20vh 2rem 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Title - Serif */
+.title-card h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--p3-teal);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Tagline - Sans-Serif Spaced */
+.title-card .tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--p3-teal);
+  margin-top: 1.5rem;
+}
+
+/* Pill CTA Button */
+.cta-pill {
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--p3-teal) 0%, var(--p3-teal-light) 100%);
+  color: var(--p3-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(15, 118, 110, 0.35);
+}
+
+.cta-pill:active {
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   HERO CONTAINER - Sticky Zoom Effect
+   ========================================= */
+
+.hero-container {
+  position: relative;
+  height: 100vh;
+  z-index: 5;
+  margin-bottom: 40px; /* Reduced breathing space */
+  padding-top: 60px; /* Account for fixed glass navbar */
+}
+
+.hero-content {
+  position: sticky;
+  top: 60px; /* Account for fixed navbar */
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+/* Hero Text - Left side */
+.hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-text {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text {
+    margin-left: 120px;
+  }
+}
+
+.hero-content h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--p3-teal);
+  letter-spacing: -3px;
+  line-height: 1;
+  margin: 0;
+}
+
+.hero-content .tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--p3-dark);
+  margin-top: 1.5rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.hero-content .hero-body {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 400;
+  color: var(--p3-grey);
+  margin-top: 1rem;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* Hero Silhouette - Right side touching center */
+.hero-silhouette {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero-silhouette img {
+  width: 560px; /* 400 * 1.4 = 560 */
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  /* Fade at top (navbar area) and bottom */
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-silhouette img {
+    width: 770px; /* 550 * 1.4 = 770 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-silhouette img {
+    width: 980px; /* 700 * 1.4 = 980 */
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scroll-indicator span {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--p3-grey);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--p3-teal) 0%, transparent 100%);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Hero Section Mobile */
+  .hero-container {
+    height: auto;
+    min-height: 100vh;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    padding-top: 80px;
+    text-align: center;
+    justify-content: flex-start;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-content .tagline {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .hero-content .hero-body {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    max-width: 100%;
+  }
+
+  /* Hide silhouette on very small screens, show smaller on tablets */
+  .hero-silhouette {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .hero-silhouette img {
+    width: 280px;
+    mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent 100%);
+  }
+
+  .scroll-indicator {
+    position: relative;
+    bottom: auto;
+    margin-top: 2rem;
+  }
+
+  /* Title Card Mobile */
+  .title-card {
+    padding: 10vh 1.5rem 2rem;
+    min-height: auto;
+  }
+
+  .title-card h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .title-card .tagline {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    letter-spacing: 0.15em;
+  }
+
+  .cta-pill {
+    padding: 0.875rem 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-silhouette img {
+    width: 220px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}

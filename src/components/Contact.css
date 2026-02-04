@@ -1,0 +1,49 @@
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+
+.contact-section {
+  padding: 8rem 2rem;
+  background: var(--p3-dark);
+  position: relative;
+  z-index: 10;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--p3-white);
+  margin: 0 0 1rem 0;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem 0;
+}
+
+.contact-section .cta-pill {
+  display: inline-block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+}
