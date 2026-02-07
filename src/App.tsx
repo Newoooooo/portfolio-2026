@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import LoadingScreen from './components/LoadingScreen';
 import InwardHeroBackground from './components/InwardHeroBackground';
+import Footer from './components/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -102,6 +103,9 @@ function App() {
 
       {/* CONTACT - Final CTA */}
       <Contact />
+
+      {/* FOOTER - Command Line Style */}
+      <Footer />
     </Layout>
     </>
   );

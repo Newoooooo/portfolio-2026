@@ -1,0 +1,188 @@
+/* Contact Modal Styles */
+
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.contact-modal-card {
+  width: 100%;
+  max-width: 28rem;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Header */
+.contact-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.025em;
+  margin: 0;
+}
+
+.contact-modal-subtitle {
+  font-size: 0.625rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+.contact-modal-close {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-modal-close:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* Body */
+.contact-modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Email Button */
+.contact-email-btn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-email-btn:hover {
+  border-color: #555;
+}
+
+.contact-email-btn:active {
+  transform: scale(0.98);
+}
+
+.contact-email-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-email-icon {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-email-text {
+  text-align: left;
+}
+
+.contact-email-label {
+  font-size: 0.625rem;
+  color: #666;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-email-value {
+  font-size: 0.875rem;
+  font-family: monospace;
+  color: #ccc;
+  margin: 0;
+}
+
+.contact-copy-icon {
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.contact-email-btn:hover .contact-copy-icon {
+  color: #fff;
+}
+
+.contact-copy-icon .copied {
+  color: #22c55e;
+}
+
+/* Social Grid */
+.contact-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.contact-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.contact-social-link:hover {
+  background: #222;
+  color: #fff;
+}
+
+.contact-social-link span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Footer */
+.contact-modal-footer {
+  padding: 1rem;
+  background: #0a0a0a;
+  border-top: 1px solid #222;
+  text-align: center;
+}
+
+.contact-modal-footer p {
+  font-size: 0.625rem;
+  color: #444;
+  font-family: monospace;
+  margin: 0;
+}
