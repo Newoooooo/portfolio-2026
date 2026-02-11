@@ -1,4 +1,4 @@
-import { ReactNode, useRef, Suspense } from 'react';
+import { useRef, Suspense, type ReactNode } from 'react';
 import { useInView } from 'framer-motion';
 
 interface LazySectionProps {
