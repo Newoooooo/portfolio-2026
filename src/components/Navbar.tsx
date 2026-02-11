@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <nav className="p3-navbar">
         {/* Left Side - Brand Logo */}
-        <a href="#" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <img src="/assets/personal-logo.svg" alt="Nheo Manalo" className="navbar-logo" />
         </a>
         
