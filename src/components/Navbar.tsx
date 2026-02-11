@@ -15,7 +15,6 @@ const Navbar = () => {
         
         {/* Right Side - Links */}
         <div className="navbar-links">
-          <a href="#about">About</a>
           <button 
             onClick={() => setIsContactOpen(true)}
             className="navbar-contact-btn"

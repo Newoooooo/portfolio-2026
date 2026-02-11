@@ -13,6 +13,16 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .dossier-section {
+    align-items: flex-start;
+    padding-top: 6rem;
+    height: auto;
+    min-height: auto; 
+    padding-bottom: 4rem;
+  }
+}
+
 .dossier-container {
   width: 100%;
   max-width: 1200px;

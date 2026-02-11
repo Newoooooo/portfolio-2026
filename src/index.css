@@ -331,3 +331,17 @@ body {
     font-size: 2.5rem;
   }
 }
+
+/* Performance Optimizations */
+@media screen and (min-width: 768px) {
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px; /* Width (ignored mostly) x Estimated Height */
+  }
+
+  /* Exclude Hero from content-visibility to prevent flash */
+  .hero-container, .hero-content {
+    content-visibility: visible !important;
+    contain: none !important;
+  }
+}

@@ -1,15 +1,18 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, lazy } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Layout from './components/Layout';
-import SkillsMarquee from './components/SkillsMarquee';
-import ProjectDossier from './components/ProjectDossier';
-import Toolkit from './components/Toolkit';
-import SocialProof from './components/SocialProof';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
 import LoadingScreen from './components/LoadingScreen';
 import InwardHeroBackground from './components/InwardHeroBackground';
-import Footer from './components/Footer';
+import LazySection from './components/LazySection';
+
+// Lazy load non-critical components
+const SkillsMarquee = lazy(() => import('./components/SkillsMarquee'));
+const ProjectDossier = lazy(() => import('./components/ProjectDossier'));
+const Toolkit = lazy(() => import('./components/Toolkit'));
+const SocialProof = lazy(() => import('./components/SocialProof'));
+const Gallery = lazy(() => import('./components/Gallery'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -87,25 +90,39 @@ function App() {
       </section>
 
       {/* SKILLS MARQUEE - Scrolling Skills & Focus Areas */}
-      <SkillsMarquee />
+      <LazySection minHeight="200px">
+        <SkillsMarquee />
+      </LazySection>
 
       {/* CASE DOSSIER - Master-Detail Case Studies */}
-      <ProjectDossier />
+      <LazySection>
+        <ProjectDossier />
+      </LazySection>
 
       {/* TOOLKIT - Parallax Skills */}
-      <Toolkit />
+      <LazySection>
+        <Toolkit />
+      </LazySection>
 
       {/* SOCIAL PROOF - Testimonials & Certifications */}
-      <SocialProof />
+      <LazySection>
+        <SocialProof />
+      </LazySection>
 
       {/* GALLERY - Scroll-Synced Carousel with Sticky CTA */}
-      <Gallery />
+      <LazySection>
+        <Gallery />
+      </LazySection>
 
       {/* CONTACT - Final CTA */}
-      <Contact />
+      <LazySection>
+        <Contact />
+      </LazySection>
 
       {/* FOOTER - Command Line Style */}
-      <Footer />
+      <LazySection minHeight="300px">
+        <Footer />
+      </LazySection>
     </Layout>
     </>
   );
